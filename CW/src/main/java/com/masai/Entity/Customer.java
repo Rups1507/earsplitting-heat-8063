@@ -1,5 +1,6 @@
 package com.masai.Entity;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -21,6 +22,9 @@ public class Customer {
 	@Column(nullable = false)
 	private String name;
 	
+	@Column(name = "date_of_birth",nullable = false)
+	private LocalDate dob;
+	
 	@Column(nullable = false, unique = true)
 	private String username;
 	
@@ -36,12 +40,23 @@ public class Customer {
 		super();
 	}
 
-	public Customer(String name, String username, String password, List<Booking> booking) {
+	public Customer(String name, LocalDate dob,String username, String password, List<Booking> booking) {
 		super();
 		this.name = name;
+		this.dob = dob;
 		this.username = username;
 		this.password = password;
 		this.booking = booking;
+	}
+	
+	
+
+	public LocalDate getDob() {
+		return dob;
+	}
+
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
 	}
 
 	public int getCustomerId() {
@@ -84,10 +99,11 @@ public class Customer {
 		this.booking = booking;
 	}
 
+	
 	@Override
 	public String toString() {
-		return "Customer [customerId=" + customerId + ", name=" + name + ", username=" + username + ", password="
-				+ password + ", booking=" + booking + "]";
+		return "Customer [customerId=" + customerId + ", name=" + name + ", dob=" + dob + ", username=" + username
+				+ ", password=" + password + ", booking=" + booking + "]";
 	}
 	
 	
