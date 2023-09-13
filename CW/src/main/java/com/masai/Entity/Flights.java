@@ -18,25 +18,34 @@ import jakarta.persistence.Table;
 public class Flights {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int flightId;
+	private Integer flightId;
+	
 	@Column(nullable = false , unique = true)
 	private String flightNumber;
+	
 	@Column(nullable = false)
 	private String airlineName;
+	
 	@Column(nullable = false)
 	private String departureCity;
+	
 	@Column(nullable = false)
 	private String arrivalCity;
+	
 	@Column(nullable = false)
 	private LocalDate departureDate;
+	
 	@Column(nullable = false)
 	private LocalDate arrivalDate;
+	
 	@Column(nullable = false)
 	private LocalTime departureTime;
+	
 	@Column(nullable = false)
 	private LocalTime arrivalTime;
+	
 	@Column(nullable = false)
-	private double price;
+	private Double price;
 	
 	@OneToMany(mappedBy = "flights" , cascade = CascadeType.ALL)
 	private List<Booking> booking;

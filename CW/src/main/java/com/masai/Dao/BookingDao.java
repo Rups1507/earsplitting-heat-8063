@@ -1,5 +1,5 @@
 package com.masai.Dao;
 
-public class BookingDao {
+public interface BookingDao {
 
 }
