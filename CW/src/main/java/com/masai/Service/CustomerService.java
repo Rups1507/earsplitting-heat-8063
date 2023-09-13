@@ -10,9 +10,9 @@ import com.masai.Exeception.SomethingWentWrongException;
 
 public interface CustomerService {
 	
-		void addBooking(Booking booking) throws SomethingWentWrongException;
+		
 		void addCustomer(Customer customer) throws SomethingWentWrongException;
-		void login(String username, String password)throws SomethingWentWrongException, NoRecordFoundException;
+		Customer login(String username, String password)throws SomethingWentWrongException, NoRecordFoundException;
 		
 	//	void updateCustomer(int customerid)throws SomethingWentWrongException,NoRecordFoundException;
 		void changePassword(String oldPass, String newPass)throws SomethingWentWrongException;

@@ -98,9 +98,16 @@ public class App
     	
     	try {
     		CustomerService cs = new CustomerServiceImpl();
-    		cs.login(username, password);
-    		System.out.println("Login successful");
-    		CustomerUI.customerMenu(sc);
+    		Customer c = cs.login(username, password);
+    		if(c != null) {
+    			System.out.println("Login successful");
+        		CustomerUI.customerMenu(sc);
+    		}
+    		else {
+    			System.out.println("Wrong credentials, please try again");
+    			
+    		}
+    		
     	}catch(NoRecordFoundException | SomethingWentWrongException e) {
     		System.out.println(e.getMessage());
     	} 
