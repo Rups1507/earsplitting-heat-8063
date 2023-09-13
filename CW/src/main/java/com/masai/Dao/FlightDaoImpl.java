@@ -1,5 +1,5 @@
 package com.masai.Dao;
 
-public class FlightDaoImpl extends FlightDao {
+public class FlightDaoImpl implements FlightDao {
 
 }

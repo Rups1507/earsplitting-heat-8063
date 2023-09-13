@@ -1,5 +1,5 @@
 package com.masai.Dao;
 
-public class BookingDaoImpl extends BookingDao {
+public class BookingDaoImpl implements BookingDao {
 
 }

@@ -1,5 +1,5 @@
 package com.masai.Dao;
 
-public class AdminDaoImpl extends AdminDao {
+public class AdminDaoImpl implements AdminDao {
 
 }
