@@ -13,10 +13,11 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name ="customers")
+@Table(name ="customer")
 public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "customerId")
 	private int customerId;
 	
 	@Column(nullable = false)
@@ -31,7 +32,7 @@ public class Customer {
 	@Column(nullable = false)
 	private String password;
 	
-	@OneToMany(mappedBy = "customers" , cascade =  CascadeType.ALL)
+	@OneToMany(mappedBy = "customer" , cascade =  CascadeType.ALL)
 	private List<Booking> booking;
 	
 	

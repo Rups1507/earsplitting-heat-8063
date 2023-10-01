@@ -11,6 +11,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -28,12 +29,12 @@ public class Booking {
 	@Column(nullable = false)
 	private LocalTime bookTime;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinTable(name = "customerId")
+	@ManyToOne
+	@JoinColumn(name = "customerId")
 	private Customer customer;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinTable(name = "customerId")
+	@ManyToOne
+	@JoinColumn(name = "flightId")
 	private Flights flight;
 	
 	@Enumerated(EnumType.STRING)

@@ -14,10 +14,11 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "flights")
+@Table(name = "flight")
 public class Flights {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "flightId")
 	private Integer flightId;
 	
 	@Column(nullable = false , unique = true)
@@ -47,7 +48,7 @@ public class Flights {
 	@Column(nullable = false)
 	private Double price;
 	
-	@OneToMany(mappedBy = "flights" , cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "flight" , cascade = CascadeType.ALL)
 	private List<Booking> booking;
 
 	public Flights(String flightNumber, String airlineName, String departureCity, String arrivalCity,
